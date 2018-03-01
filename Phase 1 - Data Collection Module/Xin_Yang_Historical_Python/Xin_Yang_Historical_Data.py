@@ -102,17 +102,3 @@ Tested Feb.28.2018 by Xin Yang.
 
 *Close price adjusted for splits. **Adjusted close price adjusted for both dividends and splits.
 """
-
-google = getHistoricalData(getURL("GOOG"))
-
-print len(google) # record numbers
-#print google
-print google[0] # first record
-print google[251] # last record
-print google[0][1] # date of first record
-
-yahoo = getHistoricalData(getURL("AABA"))
-
-print len(yahoo)
-print yahoo[0]
-print yahoo[251]

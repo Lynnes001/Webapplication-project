@@ -79,11 +79,4 @@ Tested Mar.1.2018 by Song Yang.
 # In[93]:
 
 
-prevdata = 0
-for i in range(100):
-    realtimeInfo = getRealtimeStock("NFLX")
-    if ( prevdata != realtimeInfo[2] ):
-        prevdata = realtimeInfo[2]
-        print (prevdata, time.asctime( time.localtime(realtimeInfo[3])) )
-    time.sleep(1)
 
