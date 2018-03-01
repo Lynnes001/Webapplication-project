@@ -1,5 +1,5 @@
 
-import time
+import datetime
 import requests
 import json
 
@@ -17,37 +17,31 @@ def getRealtimeStock(symbol):
     i2=r.rfind(';', i1, i2)
     jsonstr=r[i1:i2]      
 
-
+    currentdatetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
     #load the raw json data into a python data object
     data = json.loads(jsonstr)
 
     #pull the values that we are interested in 
     name=data['context']['dispatcher']['stores']['QuoteSummaryStore']['price']['shortName']
     price=data['context']['dispatcher']['stores']['QuoteSummaryStore']['price']['regularMarketPrice']['raw']
+    volume=data['context']['dispatcher']['stores']['QuoteSummaryStore']['price']['regularMarketVolume']['raw']
 #     change=data['context']['dispatcher']['stores']['QuoteSummaryStore']['price']['regularMarketChange']['raw']
-#     shares_outstanding=data['context']['dispatcher']['stores']['QuoteSummaryStore']['defaultKeyStatistics']['sharesOutstanding']['raw']
-#     market_cap=data['context']['dispatcher']['stores']['QuoteSummaryStore']['summaryDetail']['marketCap']['raw']
-#     trailing_pe=data['context']['dispatcher']['stores']['QuoteSummaryStore']['summaryDetail']['trailingPE']['raw']
-#     earnings_per_share=data['context']['dispatcher']['stores']['QuoteSummaryStore']['defaultKeyStatistics']['trailingEps']['raw']
-#     forward_annual_dividend_rate=data['context']['dispatcher']['stores']['QuoteSummaryStore']['summaryDetail']['dividendRate']['raw']
-#     forward_annual_dividend_yield=data['context']['dispatcher']['stores']['QuoteSummaryStore']['summaryDetail']['dividendYield']['raw']
 
     #print the values
 #     print 'Symbol:', symbol
 #     print 'Name:', name
 #     print 'Price:', price
+#     print 'Volume:', volume
 #     print 'Change:', change
-#     print 'Shares Outstanding:', shares_outstanding
-#     print 'Market Cap:', market_cap
-#     print 'Trailing PE:', trailing_pe
-#     print 'Earnings Per Share:', earnings_per_share
-#     print 'Forward Annual Dividend Rate:', forward_annual_dividend_rate
-#     print 'Forward_annual_dividend_yield:', forward_annual_dividend_yield
+
+    
     res = []
     res.append(symbol)
-    res.append(name)
     res.append(float(price))
-    res.append(time.time())
+    res.append(currentdatetime)
+    res.append(int(volume))
+#     print res
     return res
 
 def getURL(stockCode):
