@@ -1,4 +1,4 @@
-# Python Web Crawler for Historical Stock Data (1 year) on Yahoo Finance using BeautifulSoup and Selenium
+# Python Realtime Stock Data on Yahoo Finance using Http Request
 
 # Before you run:
   **PLEASE MAKE SURE YOU HAVE ALREADY INSTALLED 'pip' for Python!**
