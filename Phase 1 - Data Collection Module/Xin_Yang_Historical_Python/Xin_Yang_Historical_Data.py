@@ -9,7 +9,7 @@ import time
 
 # call selenium and chromedriver to get driver
 def driveChrome(url):
-    driver = webdriver.Chrome('/Users/yx960203/Desktop/chromedriver') # CHANGE THE DRIVER TYPE and PATH HERE!!
+    driver = webdriver.Chrome('./chromedriver') # CHANGE THE DRIVER TYPE and PATH HERE!!
 
     # mimic mouse operation to scroll down and show the full page
     driver.get(url)

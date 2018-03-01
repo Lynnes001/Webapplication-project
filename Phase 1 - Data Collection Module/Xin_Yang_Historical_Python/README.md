@@ -30,7 +30,7 @@
 # How to customize and run:
   * Set path to your browser driver:
     - See the definition of function driveChrome.
-    - Change "webdriver.Chrome('/Users/yx960203/Desktop/chromedriver')" to your browser name and driver path.
+    - Change "webdriver.Chrome('./chromedriver')" to your browser name and driver path.
 
   * Get data of your stock:
     - Read the 'Examples' section in the code.
