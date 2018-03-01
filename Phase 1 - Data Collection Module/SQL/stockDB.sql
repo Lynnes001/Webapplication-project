@@ -11,6 +11,8 @@ CREATE DATABASE stockDB;
 grant all privileges on stockDB.* to "kora"@"localhost" IDENTIFIED BY "1234";
 
 #login as "kora"
+#change database to stockDB
+USE stockDB
 
 #create tables...
 CREATE TABLE stock(
@@ -23,7 +25,7 @@ CREATE TABLE Real_Time_Data(
 	stock_date DATE,
 	stock_time TIME,
 	price FLOAT,
-	volume LONG,
+	volume INT,
 	PRIMARY KEY(rid),
 	FOREIGN KEY(symbol)
 	REFERENCES stock(symbol)
@@ -38,7 +40,7 @@ CREATE TABLE History_Time_Data(
 	high_price FLOAT,
 	low_price FLOAT,
 	close_price FLOAT,
-	volume LONG,
+	volume INT,
 	PRIMARY KEY(hid),
 	FOREIGN KEY(symbol)
 	REFERENCES stock(symbol)
