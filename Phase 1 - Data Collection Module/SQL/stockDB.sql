@@ -22,8 +22,7 @@ CREATE TABLE stock(
 CREATE TABLE Real_Time_Data(
 	rid INT UNSIGNED AUTO_INCREMENT NOT NULL,
 	symbol VARCHAR(4) NOT NULL,
-	stock_date DATE,
-	stock_time TIME,
+	stock_time DATETIME,
 	price FLOAT,
 	volume INT,
 	PRIMARY KEY(rid),
