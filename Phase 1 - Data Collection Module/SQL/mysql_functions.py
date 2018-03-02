@@ -18,7 +18,7 @@ def dbInsertRealTime(list):
 	list = [symbol, price, stock_time, volume]
 	'''
 	#database connection
-	db = MySQLdb.connect("127.0.0.1", "root", "", "stockDB")
+	db = MySQLdb.connect("127.0.0.1", "root", "ys0101", "stockDB")
 	cursor = db.cursor()
 	#define sql
 	sql = """INSERT INTO Real_Time_Data(symbol, price, stock_time, volume) VALUES('"""+list[0]+"""', """+ str(list[1]) + """, '"""+list[2]+ """', """ + str(list[3])+ """)"""
