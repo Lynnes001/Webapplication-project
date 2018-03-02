@@ -1,12 +1,19 @@
 # Webapplication-project
-This is the first Project Phase 1 - Data Collection Module (Group Task). We implemented following two program.
+This is code factory of Project Phase 1 - Data Collection Module (Group Task). We implemented following programs.
 
 - Python Web Crawler for Historical Stock Data
-- Python Realtime Stock Data on Yahoo Finance using Http Request
+    + folder name: Xin_Yang_Historical_Python
+- Python Realtime Stock Data Getter
+    + folder name: Song_Yang_Realtime_Python
+- Python Implementation with third-party API
+    + folder name: Zhuohang_Li_API_Python
 
-You will see program Readme.md in folders.
+You will see Readme file in each folder. We highly recommend to check our project on [Github](https://github.com/Lynnes001/Webapplication-project). We will stop pushing after the deadline.
+
+Github Link : https://github.com/Lynnes001/Webapplication-project
 
 # General Instruction
+**PLEASE MAKE SURE YOU HAVE ALREADY INSTALLED 'pip' for Python!**
   * Environment:
     + Python 2.7
     
@@ -15,7 +22,7 @@ You will see program Readme.md in folders.
     + Jupyter Notebook:
       > pip install jupyter notebook
 
-    + MacOS/Ubuntu(not required)
+    + MacOS/Ubuntu (not required)
 
 #### For realtime data program
 
