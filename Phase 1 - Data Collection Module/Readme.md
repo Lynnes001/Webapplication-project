@@ -3,6 +3,7 @@ This is the first Project Phase 1 - Data Collection Module (Group Task). We impl
 
 - Python Web Crawler for Historical Stock Data
 - Python Realtime Stock Data on Yahoo Finance using Http Request
+- Python Implementation with third-party API
 
 You will see program Readme.md in folders.
 
