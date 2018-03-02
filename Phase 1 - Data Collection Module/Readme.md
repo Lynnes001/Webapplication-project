@@ -13,6 +13,7 @@ You will see Readme file in each folder. We highly recommend to check our projec
 Github Link : https://github.com/Lynnes001/Webapplication-project
 
 # General Instruction
+**PLEASE MAKE SURE YOU HAVE ALREADY INSTALLED 'pip' for Python!**
   * Environment:
     + Python 2.7
     
@@ -21,7 +22,7 @@ Github Link : https://github.com/Lynnes001/Webapplication-project
     + Jupyter Notebook:
       > pip install jupyter notebook
 
-    + MacOS/Ubuntu(not required)
+    + MacOS/Ubuntu (not required)
 
 #### For realtime data program
 
