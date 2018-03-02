@@ -5,7 +5,7 @@ def dbInsertStock(sy):
 	db = MySQLdb.connect("127.0.0.1", "kora", "1234", "stockDB")
 	cursor = db.cursor()
 	#define sql
-	sql = """INSERT INTO stock(symbol) VALUES(sy)"""
+	sql = """INSERT INTO stock(symbol) VALUES('"""+sy+"""')"""
 	try:
 		cursor.execute(sql)
 		db.commit()
