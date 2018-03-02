@@ -33,6 +33,7 @@
      , for example:
 	> python Continuously.py GOOG
 
+# NOTICE THAT the codes are all well-tested, but there is still a small chance that the code will not perform as expected due to the fact that the API server may not be able to respond to frequent pull request. Please reduce the number of stock symbols in the argument and retry if this happens, thank you for your patience. 
 
     **For Details Please Read the Code**
 
