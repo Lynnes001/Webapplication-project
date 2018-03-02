@@ -1,34 +1,15 @@
 # Python Realtime Stock Data on Yahoo Finance using Http Request
 
-# Before you run:
-  **PLEASE MAKE SURE YOU HAVE ALREADY INSTALLED 'pip' for Python!**
-  * Environment:
-    + Python 2.7
-    + Jupyter Notebook:
-      > pip install jupyter notebook
-
-    + Ubuntu(not required)
-
-  * Dependencies:
-
-    + request 2.8
-      > pip install requests
-
---------------------------------------------------------------------------------
-
 # How to run:
-  * Get data of your stock:
-    - Read the 'Examples' section in the code.
-    - Get the stock code of your stock, e.g., Google: GOOG, Yahoo: AABA, etc.
-    - Say you want to get the company example's stock, whose stock code is 'CODE':
-      > Example: getRealtimeStock("stock symbol"):
+# Instruction for background service Python Realtime Stock on Yahoo Finance. 
+## How to run in bash
+1. Find RealtimeRun.py in the parent folder and enter the folder
+2. Run is bash `bash python RealtimeRun.py <StockSymbol> <runtime(min)>`
+    - Example: the following command will fetch AMZN realtime stock price for 10 minutes.
+      > python RealtimeRun.py AMZN 10
 
-    - Retrieve data:
-      > res: Store all current information
-        res[0]: Stock Symbol
-        res[1]: Stock Name
-        res[2]: Stock Current price
-        res[3]: Current timestamp
-    **For Details Please Read the Code**
-
-_Created and tested on Mar.1.2018 by Song Yang (sy540)
+## How to run in jupyter
+1. Find RealtimeRun.py in the parent folder and enter the folder
+2. Run is bash `bash python RealtimeRun.py <StockSymbol> <runtime(min)>`
+    - Example: the following command will fetch AMZN realtime stock price for 10 minutes.
+      > python RealtimeRun.py AMZN 10
