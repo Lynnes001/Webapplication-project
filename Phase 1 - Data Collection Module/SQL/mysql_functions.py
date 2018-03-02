@@ -22,7 +22,6 @@ def dbInsertRealTime(list):
 	cursor = db.cursor()
 	#define sql
 	sql = """INSERT INTO Real_Time_Data(symbol, price, stock_time, volume) VALUES('"""+list[0]+"""', """+ str(list[1]) + """, '"""+list[2]+ """', """ + str(list[3])+ """)"""
-	print sql
 	try:
 		cursor.execute(sql)
 		db.commit()
