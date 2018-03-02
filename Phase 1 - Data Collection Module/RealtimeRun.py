@@ -27,7 +27,7 @@ def RealtimeStock(StockName):
         realtimeInfo = getRealtimeStock(StockName)
         print realtimeInfo
         dbInsertRealTime(realtimeInfo)
-        time.sleep(1)
+        time.sleep(60)
     
 def main(argv1, argv2):
     runtime = argv2
