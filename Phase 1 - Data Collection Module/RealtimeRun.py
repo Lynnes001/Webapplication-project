@@ -15,7 +15,7 @@ import os
 
 from Xin_Yang_Historical_Data import getHistoricalData, getURL
 from Song_Yang_Realtime_Data import getRealtimeStock
-from mysql_functions import dbInsertStock, dbInsertRealTime, dbInsertHistoryTime
+from mysql_functions import dbInsertRealTime, dbInsertHistoryTime
 
 
 # In[27]:
