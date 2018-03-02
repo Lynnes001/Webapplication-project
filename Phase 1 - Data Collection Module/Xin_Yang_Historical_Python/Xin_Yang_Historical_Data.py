@@ -180,7 +180,7 @@ def getURL(stockCode):
 
 # insert data into database
 def dbInsertHistoryTime(list):
-    db = MySQLdb.connect("127.0.0.1", "root", "yx960203", "stockDB") # Change your database info here!
+    db = MySQLdb.connect("127.0.0.1", "root", "passwd", "stockDB") # Change your database info here!
     cursor = db.cursor()
     sql = "INSERT INTO History_Time_Data(symbol, stock_date, open_price, high_price, low_price, close_price, adj_close, volume) VALUES(" + "'"+list[0] + "'," + "'" + list[1] + "'" + "," + list[2] + "," + list[3] + "," + list[4] + "," + list[5] + "," + list[6] + "," + list[7] + ")" + ";"
     try:
