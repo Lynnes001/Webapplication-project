@@ -7,4 +7,4 @@ for stockSymbol in sys.argv[1:]:
     data, meta_data = ts.get_intraday(symbol=stockSymbol, interval='1min', outputsize='full')
     print('Processing '+stockSymbol)
     pprint(data.tail(1))
-    data.to_csv(stockSymbol + '.txt', index=True, sep=' ')
+    data.to_csv(stockSymbol + '.txt', index=True, sep=',')
