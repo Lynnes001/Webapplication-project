@@ -39,6 +39,7 @@ CREATE TABLE History_Time_Data(
 	high_price FLOAT,
 	low_price FLOAT,
 	close_price FLOAT,
+	adj_close FLOAT,
 	volume INT,
 	PRIMARY KEY(hid),
 	FOREIGN KEY(symbol)
