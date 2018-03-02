@@ -23,8 +23,6 @@ CREATE TABLE Real_Time_Data(
 	price FLOAT,
 	volume INT,
 	PRIMARY KEY(rid)
-	REFERENCES stock(symbol)
-		ON DELETE CASCADE
 	);
 
 CREATE TABLE History_Time_Data(
@@ -38,6 +36,4 @@ CREATE TABLE History_Time_Data(
 	adj_close FLOAT,
 	volume INT,
 	PRIMARY KEY(hid)
-	REFERENCES stock(symbol)
-		ON DELETE CASCADE
 	);
