@@ -15,9 +15,6 @@ grant all privileges on stockDB.* to "kora"@"localhost" IDENTIFIED BY "1234";
 USE stockDB
 
 #create tables...
-CREATE TABLE stock(
-	symbol VARCHAR(4) NOT NULL,
-	PRIMARY KEY(symbol));
 
 CREATE TABLE Real_Time_Data(
 	rid INT UNSIGNED AUTO_INCREMENT NOT NULL,
@@ -25,8 +22,7 @@ CREATE TABLE Real_Time_Data(
 	stock_time DATETIME,
 	price FLOAT,
 	volume INT,
-	PRIMARY KEY(rid),
-	FOREIGN KEY(symbol)
+	PRIMARY KEY(rid)
 	REFERENCES stock(symbol)
 		ON DELETE CASCADE
 	);
@@ -41,8 +37,7 @@ CREATE TABLE History_Time_Data(
 	close_price FLOAT,
 	adj_close FLOAT,
 	volume INT,
-	PRIMARY KEY(hid),
-	FOREIGN KEY(symbol)
+	PRIMARY KEY(hid)
 	REFERENCES stock(symbol)
 		ON DELETE CASCADE
 	);
