@@ -1,16 +1,8 @@
-#Create user and grant privileges at root admin
-#user name: kora
-#using localhost
-#password: 1234
-CREATE USER "kora"@"localhost" IDENTIFIED BY "1234"
+#YOU SHOULD LOGI TO MYSQL AS root USER FIRST
 
 #create a database
 CREATE DATABASE stockDB;
 
-#grant privileges to user "kora"
-grant all privileges on stockDB.* to "kora"@"localhost" IDENTIFIED BY "1234";
-
-#login as "kora"
 #change database to stockDB
 USE stockDB
 
