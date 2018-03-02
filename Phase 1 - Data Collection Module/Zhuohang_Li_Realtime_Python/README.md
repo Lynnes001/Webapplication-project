@@ -1,4 +1,4 @@
-# Python Realtime Stock Data using alpha_vantage API
+# Stock Data collector using alpha_vantage API
 
 # Before you run:
   **PLEASE MAKE SURE YOU HAVE ALREADY INSTALLED 'pip' for Python!**
@@ -21,11 +21,17 @@
      , for example:
 	> python RealTime.py GOOG AABA CSCO
 
+  * Historical.py: 
+    *to collect historical data and save to .csv files
+    *to run the code, pass multiply stock symbols by command-line arguments
+     , for example:
+	> python Historical.py GOOG AABA CSCO
+
   * Continuously.py: 
     *run continuously to collect realtime data of a single stock
     *to run the code, pass stock symbols by command-line arguments
      , for example:
-	> python Continously.py GOOG
+	> python Continuously.py GOOG
 
 
     **For Details Please Read the Code**
