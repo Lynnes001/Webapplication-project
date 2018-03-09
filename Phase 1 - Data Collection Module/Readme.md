@@ -88,3 +88,14 @@ CREATE TABLE History_Time_Data(
 );
 
 ```
+
+#### Output Database to .csv File
+```MySQL
+USE stockDB;
+SELECT * FROM Real_Time_Data   
+INTO OUTFILE '/var/lib/mysql-files/mytable.csv'  
+FIELDS TERMINATED BY ','   
+OPTIONALLY ENCLOSED BY '"'   
+LINES TERMINATED BY '\n';
+```
+
