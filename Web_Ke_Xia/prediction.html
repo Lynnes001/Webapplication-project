@@ -16,7 +16,7 @@
   <script>
     /////////////////////////////用于显示预测值，未完成！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
     function doPrediction(str) {
-      //1.str为股票代码，例如goog
+      //1.str为获取的股票代码，例如GOOG
       //2.通过str向服务器申请数据，返回三个预测值
       //3.输出预测值
       var bayes="$234";
@@ -24,6 +24,7 @@
       var ann="$34";
       var current="34";
       var rec="hold";
+      
       document.getElementById("2-0").innerHTML=current;
       document.getElementById("2-1").innerHTML=bayes;
       document.getElementById("2-2").innerHTML=svm;
@@ -185,7 +186,7 @@
 <!-- Start Footer -->
 <div class="row footer">
   <div class="col-md-6 text-left">
-  Copyright © 2018. 568 Project Team #6 All rights reserved.
+  Copyright © 2018. 568 Project Team #5 All rights reserved.
   </div>
 </div>
 <!-- End Footer -->
