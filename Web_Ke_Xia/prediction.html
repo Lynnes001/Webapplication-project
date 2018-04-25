@@ -15,14 +15,15 @@
   <script src="./amcharts/amstock.js" type="text/javascript"></script>
   <script>
     /////////////////////////////用于显示预测值，未完成！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
-    function doPrediction(str) {
+    function doPrediction(str) 
+    {
       //1.str为获取的股票代码，例如GOOG
       //2.通过str向服务器申请数据，返回三个预测值
       //3.输出预测值
       var bayes="$234";
       var svm="$21";
       var ann="$34";
-      var current="34";
+      var current="$34";
       var rec="hold";
       
       document.getElementById("2-0").innerHTML=current;
@@ -32,6 +33,16 @@
       document.getElementById("2-4").innerHTML=rec;
     }
     /////////////////////////////用于显示预测值，未完成！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+
+    function search(str) 
+    {
+      var url = self.location.href
+      var start = url.split('prediction')[0]
+      var page = start+str+'.html';
+      //alert(page);
+      window.open(page);
+    }
+
   </script>
   </head>
   <body>
@@ -50,6 +61,13 @@
      <a href="#" class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
      <!-- End Sidebar Show Hide Button -->
  
+    <!-- Start Searchbox -->
+    <form class="searchform">
+      <input type="text" class="searchbox" id="searchbox" placeholder="Search Stock" onchange="search(this.value)">
+      <span class="searchbutton"><i class="fa fa-search"></i></span>
+    </form>
+    <!-- End Searchbox -->
+
    </div>
    <!-- END TOP -->
   <!-- //////////////////////////////////////////////////////////////////////////// --> 

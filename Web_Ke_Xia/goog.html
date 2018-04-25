@@ -299,6 +299,16 @@
       }
     }  
   //<!--===================== ！！！！！！！！！！！！！！！！！！！实时更新，代码未实现！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ==========================-->
+
+    function search(str) 
+    {
+      var url = self.location.href
+      var start = url.split('goog')[0]
+      var page = start+str+'.html';
+      //alert(page);
+      window.open(page);
+    }
+
   </script>
 
   <title>Finance</title>
@@ -324,6 +334,13 @@
   <a href="#" class="sidebar-open-button"><i class="fa fa-bars"></i></a>
   <a href="#" class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
   <!-- End Sidebar Show Hide Button -->
+
+    <!-- Start Searchbox -->
+    <form class="searchform">
+      <input type="text" class="searchbox" id="searchbox" placeholder="Search" onchange="search(this.value)">
+      <span class="searchbutton"><i class="fa fa-search"></i></span>
+    </form>
+    <!-- End Searchbox -->  
 
 </div>
 <!-- END TOP -->
