@@ -364,6 +364,11 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <tr id="10">
+                      <td id="10-1"></td>
+                      <td id="10-2"></td>
+                      <td id="10-3"></td> 
+                    </tr>                  
                     <tr id="11">
                       <td id="11-1"></td>
                       <td id="11-2"></td>
@@ -377,7 +382,7 @@
                     <tr id="13">
                       <td id="13-1"></td>
                       <td id="13-2"></td>
-                      <td id="13-2"></td>
+                      <td id="13-3"></td>
                     </tr>
                     <tr id="14">
                       <td id="14-1"></td>
@@ -409,11 +414,7 @@
                      <td id="19-2"></td>
                      <td id="19-3"></td>
                     </tr>
-                    <tr id="20">
-                     <td id="20-1"></td>
-                     <td id="20-2"></td>
-                     <td id="20-3"></td>
-                    </tr>
+
                   </tbody>
                 </table>
               </div>
@@ -535,7 +536,7 @@ Sparkline
       //请求数据路径需要修改
     xmlhttp.open("GET","/ajax/getcustomer.asp?q="+str,true);
     xmlhttp.send(); 
-    sleep(2000);
+    sleep(2000);  //休眠2秒，再次刷新数据
     }
   }
 
@@ -561,14 +562,26 @@ Sparkline
     }  
   }
 
-  //str为
+  
   function updateLowerThanLowestPriceOfSelectedStock(str) {
-    var selectedStockPrice= "123";
+    var selectedStockPrice= "$233.33";
     document.getElementById("ave").innerHTML=selectedStockPrice;
     var id="GOOG";
     var company="alpha.Inc";
     var price="123";
-
+    var count=6;
+    for (var i=0;i<count;i++) 
+    {
+        document.getElementById("1"+i+"-1").innerHTML=id;
+        document.getElementById("1"+i+"-2").innerHTML=company;
+        document.getElementById("1"+i+"-3").innerHTML=price;       
+    }
+    for(var j=9;j>count;j--)
+    {
+        document.getElementById("1"+j+"-1").innerHTML=" ";
+        document.getElementById("1"+j+"-2").innerHTML=" ";
+        document.getElementById("1"+j+"-3").innerHTML=" ";       
+    }
 }
 
   function sleep(ms) {
