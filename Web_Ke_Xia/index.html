@@ -22,6 +22,17 @@
       //alert(page);
       window.open(page);
     }
+
+  //定时刷新，时间间隔为3s
+  setInterval("startRequest()",30000);
+
+  function startRequest(){
+    loadlist();//需要定时重新加载的函数。
+  };
+
+  function loadlist() {
+    updateRealtimePriceOfEachStock()
+  }
   </script>
 
   <!-- ========== Css Files ========== -->
@@ -359,59 +370,48 @@
                   <thead>
                     <tr>
                       <td>Stock ID</td>
-                      <td>Company</td>
                       <td>Lowest Price</td>
                     </tr>
                   </thead>
                   <tbody>
                     <tr id="10">
                       <td id="10-1"></td>
-                      <td id="10-2"></td>
                       <td id="10-3"></td> 
                     </tr>                  
                     <tr id="11">
                       <td id="11-1"></td>
-                      <td id="11-2"></td>
                       <td id="11-3"></td>
                     </tr>
                     <tr id="12">
                       <td id="12-1"></td>
-                      <td id="12-2"></td>
                       <td id="12-3"></td>
                     </tr>
                     <tr id="13">
                       <td id="13-1"></td>
-                      <td id="13-2"></td>
                       <td id="13-3"></td>
                     </tr>
                     <tr id="14">
                       <td id="14-1"></td>
-                      <td id="14-2"></td>
                       <td id="14-3"></td>
                     </tr>
                     <tr id="15">
                       <td id="15-1"></td>
-                      <td id="15-2"></td>
                       <td id="15-3"></td>
                     </tr>
                     <tr id="16">
                       <td id="16-1"></td>
-                      <td id="16-2"></td>
                       <td id="16-3"></td>
                     </tr>
                     <tr id="17">
                       <td id="17-1"></td>
-                      <td id="17-2"></td>
                       <td id="17-3"></td>
                     </tr>
                     <tr id="18">
                       <td id="18-1"></td>
-                      <td id="18-2"></td>
                       <td id="18-3"></td>
                     </tr>
                    <tr id="19">
                      <td id="19-1"></td>
-                     <td id="19-2"></td>
                      <td id="19-3"></td>
                     </tr>
 
@@ -442,8 +442,6 @@
   </div>
 </div>
 <!-- End Footer -->
-
-
 </div>
 <!-- End Content -->
  <!-- //////////////////////////////////////////////////////////////////////////// --> 
@@ -475,28 +473,6 @@ Bootstrap Toggle
 ================================================ -->
 <script type="text/javascript" src="js/bootstrap-toggle/bootstrap-toggle.min.js"></script>
 
-<!-- ================================================
-Flot Chart
-================================================ -->
-<!-- main file -->
-<script type="text/javascript" src="js/flot-chart/flot-chart.js"></script>
-<!-- time.js -->
-<script type="text/javascript" src="js/flot-chart/flot-chart-time.js"></script>
-<!-- stack.js -->
-<script type="text/javascript" src="js/flot-chart/flot-chart-stack.js"></script>
-<!-- pie.js -->
-<script type="text/javascript" src="js/flot-chart/flot-chart-pie.js"></script>
-<!-- demo codes -->
-<script type="text/javascript" src="js/flot-chart/flot-chart-plugin.js"></script>
-
-
-<!-- ================================================
-Easy Pie Chart
-================================================ -->
-<!-- main file -->
-<script type="text/javascript" src="js/easypiechart/easypiechart.js"></script>
-<!-- demo codes -->
-<script type="text/javascript" src="js/easypiechart/easypiechart-plugin.js"></script>
 
 <!-- ================================================
 Sparkline
@@ -567,19 +543,16 @@ Sparkline
     var selectedStockPrice= "$233.33";
     document.getElementById("ave").innerHTML=selectedStockPrice;
     var id="GOOG";
-    var company="alpha.Inc";
     var price="123";
     var count=6;
     for (var i=0;i<count;i++) 
     {
         document.getElementById("1"+i+"-1").innerHTML=id;
-        document.getElementById("1"+i+"-2").innerHTML=company;
         document.getElementById("1"+i+"-3").innerHTML=price;       
     }
     for(var j=9;j>count;j--)
     {
         document.getElementById("1"+j+"-1").innerHTML=" ";
-        document.getElementById("1"+j+"-2").innerHTML=" ";
         document.getElementById("1"+j+"-3").innerHTML=" ";       
     }
 }

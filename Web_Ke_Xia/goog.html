@@ -291,12 +291,21 @@
 
 
   //<!--===================== ！！！！！！！！！！！！！！！！！！！实时更新，代码未实现！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ==========================-->
-    function changeRealTimePrice(str) {
+  
+    function changeRealTimePrice() {
       ////////////////每2秒请求一次数据
-      while(true) {
+              //定时刷新，时间间隔为3s
+      setInterval("startRequest()",30000);
+
+      function startRequest(){
+        loadlist();//需要定时重新加载的函数。
+      };
+
+      function loadlist() {
+        updateRealtimePriceOfEachStock()
+}
       var price="1000";
       document.getElementById("price").innerHTML=price;
-      }
     }  
   //<!--===================== ！！！！！！！！！！！！！！！！！！！实时更新，代码未实现！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ==========================-->
 
@@ -318,7 +327,7 @@
 
 </head>
 
-<body>
+<body onload="changeRealTimePrice()">
 
 <!-- //////////////////////////////////////////////////////////////////////////// --> 
 <!-- START TOP -->
@@ -453,36 +462,6 @@ Bootstrap Core JavaScript File
 Plugin.js - Some Specific JS codes for Plugin Settings
 ================================================ -->
 <script type="text/javascript" src="js/plugins.js"></script>
-
-<!-- ================================================
-Flot Chart
-================================================ -->
-<!-- main file -->
-<script type="text/javascript" src="js/flot-chart/flot-chart.js"></script>
-<!-- time.js -->
-<script type="text/javascript" src="js/flot-chart/flot-chart-time.js"></script>
-<!-- stack.js -->
-<script type="text/javascript" src="js/flot-chart/flot-chart-stack.js"></script>
-<!-- pie.js -->
-<script type="text/javascript" src="js/flot-chart/flot-chart-pie.js"></script>
-<!-- demo codes -->
-<script type="text/javascript" src="js/flot-chart/flot-chart-plugin.js"></script>
-
-<!-- ================================================
-Chartist
-================================================ -->
-<!-- main file -->
-<script type="text/javascript" src="js/chartist/chartist.js"></script>
-<!-- demo codes -->
-<script type="text/javascript" src="js/chartist/chartist-plugin.js"></script>
-
-<!-- ================================================
-Easy Pie Chart
-================================================ -->
-<!-- main file -->
-<script type="text/javascript" src="js/easypiechart/easypiechart.js"></script>
-<!-- demo codes -->
-<script type="text/javascript" src="js/easypiechart/easypiechart-plugin.js"></script>
 
 <!-- ================================================
 Sparkline
