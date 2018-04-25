@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Kode is a Premium Bootstrap Admin Template, It's responsive, clean coded and mobile friendly">
-  <meta name="keywords" content="bootstrap, admin, dashboard, flat admin template, responsive," />
   <link rel="stylesheet" href="./amcharts/style.css"	type="text/css">
 
   <script src="./amcharts/amcharts.js" type="text/javascript"></script>
@@ -292,7 +290,7 @@
     }
 
 
-  //<!------------------------ ！！！！！！！！！！！！！！！！！！！实时更新，代码未实现！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ---------------------------->
+  //<!--===================== ！！！！！！！！！！！！！！！！！！！实时更新，代码未实现！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ==========================-->
     function changeRealTimePrice(str) {
       ////////////////每2秒请求一次数据
       while(true) {
@@ -300,7 +298,17 @@
       document.getElementById("price").innerHTML=price;
       }
     }  
-  //<!------------------------ ！！！！！！！！！！！！！！！！！！！实时更新，代码未实现！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ---------------------------->
+  //<!--===================== ！！！！！！！！！！！！！！！！！！！实时更新，代码未实现！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ==========================-->
+
+    function search(str) 
+    {
+      var url = self.location.href
+      var start = url.split('goog')[0]
+      var page = start+str+'.html';
+      //alert(page);
+      window.open(page);
+    }
+
   </script>
 
   <title>Finance</title>
@@ -309,6 +317,7 @@
   <link href="css/root.css" rel="stylesheet">
 
 </head>
+
 <body>
 
 <!-- //////////////////////////////////////////////////////////////////////////// --> 
@@ -325,6 +334,13 @@
   <a href="#" class="sidebar-open-button"><i class="fa fa-bars"></i></a>
   <a href="#" class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
   <!-- End Sidebar Show Hide Button -->
+
+    <!-- Start Searchbox -->
+    <form class="searchform">
+      <input type="text" class="searchbox" id="searchbox" placeholder="Search" onchange="search(this.value)">
+      <span class="searchbutton"><i class="fa fa-search"></i></span>
+    </form>
+    <!-- End Searchbox -->  
 
 </div>
 <!-- END TOP -->
@@ -376,16 +392,16 @@
       <h1>GOOG</h1>
       <h5>Alphabet Inc.</h5>
       <!-- here to add current price-->
-      <!------------------------ ！！！！！！！！！！！！！！！！！！！实时更新，代码未实现！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ---------------------------->
+      <!--===================== ！！！！！！！！！！！！！！！！！！！实时更新，代码未实现！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ==========================-->
       <h4 id="price"><b>$1027.0</b></h4>
-      <!------------------------ ！！！！！！！！！！！！！！！！！！！实时更新，代码未实现！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ---------------------------->
-    </div>
+      <!--===================== ！！！！！！！！！！！！！！！！！！！实时更新，代码未实现！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ==========================-->
+    </div>  
   </div>
   <!-- End Presentation -->
 
  <!-- //////////////////////////////////////////////////////////////////////////// --> 
 <!-- START CONTAINER -->
-<div class="container-padding">
+  <div class="container-padding">
 
 
   <!-- Start Flot Chart -->
@@ -404,6 +420,7 @@
   </div>
   <!-- End Flot Chart -->
 
+  </div>
 </div>
 <!-- END CONTAINER -->
  <!-- //////////////////////////////////////////////////////////////////////////// --> 
@@ -412,14 +429,11 @@
 <!-- Start Footer -->
 <div class="row footer">
   <div class="col-md-6 text-left">
-  Copyright © 2018. 568 Project Team #6</a> All rights reserved.
+  Copyright © 2018. 568 Project Team #5</a> All rights reserved.
   </div>
 </div>
 <!-- End Footer -->
 
-
-</div>
-<!-- End Content -->
  <!-- //////////////////////////////////////////////////////////////////////////// --> 
 
 
