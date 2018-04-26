@@ -488,33 +488,84 @@ Sparkline
 
   <!-- first javascript file start -->
 <script>
-
-  function updateRealtimePriceOfEachStock() {
-    //代码未经验证（没有服务器无法验证，仅做参考）
-    while(true) {
-    if (window.XMLHttpRequest)
-      {// code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp=new XMLHttpRequest();
-      }
-    else
-      {// code for IE6, IE5
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-    xmlhttp.onreadystatechange=function()
-      {
-      if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
-          for(var i=1;i<=10;i++){
-            document.getElementById("0-"+"i").innerHTML=xmlhttp.responseText;  
-          }
+  var host = "http://192.168.1.4:8080"
+  // $.get(host+"/GOOG/realtime", function(result){
+  //   console.log(result)
+  // });
+  $.ajax({
+        url: host+'/GOOG/realtime',
+        type: "GET",
+        dataType: "json",
+        complete: function(data, textStatus, jqXHR) {
+            console.log(data);
+        },
+        success: function (data, textStatus, jqXHR) {
+            console.log(data);
         }
-      }
-      //请求数据路径需要修改
-    xmlhttp.open("GET","/ajax/getcustomer.asp?q="+str,true);
-    xmlhttp.send(); 
-    sleep(2000);  //休眠2秒，再次刷新数据
-    }
+    });
+  function updateRealtimePriceOfEachStock(){
+    console.log("in function")
+    $.get(host+"/GOOG/realtime", function(result){
+      console.log(result)
+      $("#0-1").html(result);
+    });
+    $.get(host+"/AABA/realtime", function(result){
+      $("#0-2").html(result);
+    });
+    $.get(host+"/CSCO/realtime", function(result){
+      $("#0-3").html(result);
+    });
+    $.get(host+"/T/realtime", function(result){
+      $("#0-4").html(result);
+    });
+    $.get(host+"/WMT/realtime", function(result){
+      $("#0-5").html(result);
+    });
+    $.get(host+"/NOK/realtime", function(result){
+      $("#0-6").html(result);
+    });
+    $.get(host+"/NFLX/realtime", function(result){
+      $("#0-7").html(result);
+    });
+    $.get(host+"/APA/realtime", function(result){
+      $("#0-8").html(result);
+    });
+    $.get(host+"/NKE/realtime", function(result){
+      $("#0-9").html(result);
+    });
+    $.get(host+"/GE/realtime", function(result){
+      $("#0-10").html(result);
+    });
   }
+  //var t = setInterval("updateRealtimePriceOfEachStock()", 10000);
+
+
+  // function updateRealtimePriceOfEachStock() {
+  //   //代码未经验证（没有服务器无法验证，仅做参考）
+  //   while(true) {
+  //   if (window.XMLHttpRequest)
+  //     {// code for IE7+, Firefox, Chrome, Opera, Safari
+  //     xmlhttp=new XMLHttpRequest();
+  //     }
+  //   else
+  //     {// code for IE6, IE5
+  //     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  //     }
+  //   xmlhttp.onreadystatechange=function()
+  //     {
+  //     if (xmlhttp.readyState==4 && xmlhttp.status==200)
+  //       {
+  //         for(var i=1;i<=10;i++){
+  //           document.getElementById("0-"+"i").innerHTML=xmlhttp.responseText;  
+  //         }
+  //       }
+  //     }
+  //     //请求数据路径需要修改
+  //   xmlhttp.open("GET","/ajax/getcustomer.asp?q="+str,true);
+  //   xmlhttp.send(); 
+  //   sleep(2000);  //休眠2秒，再次刷新数据
+  //   }
+  // }
 
   //以下三个函数都未实现实时请求数据
   function updateHighestPriceOfEachStock() {
