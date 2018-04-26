@@ -12,10 +12,10 @@ def getRealtimeStock(symbol):
     #you can write jsonstr to a file, then open the file in a web browser to browse the structure of the json data
     r=resp.text.encode('utf-8')
     i1=0
-    i1=r.find('root.App.main', i1)
-    i1=r.find('{', i1)
-    i2=r.find("\n", i1)
-    i2=r.rfind(';', i1, i2)
+    i1=r.find(b'root.App.main', i1)
+    i1=r.find(b'{', i1)
+    i2=r.find(b"\n", i1)
+    i2=r.rfind(b';', i1, i2)
     jsonstr=r[i1:i2]
 
     currentdatetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -50,4 +50,4 @@ def getURL(stockCode):
 
 if __name__ == "__main__":
     stock_info = getRealtimeStock(sys.argv[1])
-    print stock_info[1]
+    print (stock_info[1])
