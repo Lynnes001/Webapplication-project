@@ -49,5 +49,5 @@ def getURL(stockCode):
     return "https://finance.yahoo.com/quote/"+ stockCode
 
 if __name__ == "__main__":
-    stock_info = getRealtimeStock("GOOG")
+    stock_info = getRealtimeStock(sys.argv[1])
     print stock_info[1]
