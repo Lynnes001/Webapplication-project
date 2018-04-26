@@ -53,7 +53,7 @@ def get_low(symbol, period='10days'):
 
 """ return average close value of last 10 days(default)/1 year
 """
-def get_avg(symbol, period='10days'):
+def get_avg_value(symbol, period='10days'):
     ts = TimeSeries(key='0345Y49CIQ03XJK3', output_format='pandas')
     data, meta_data = ts.get_daily(symbol=symbol, outputsize='full')
     if(period=='10days'):
@@ -63,3 +63,31 @@ def get_avg(symbol, period='10days'):
     print(slice)
     close=slice['4. close']
     return close.mean()
+
+""" return the data within last 10 days(default)/1 year that has the highest 'high' value
+"""
+def get_high_value(symbol, period='10days'):
+    ts = TimeSeries(key='0345Y49CIQ03XJK3', output_format='pandas')
+    data, meta_data = ts.get_daily(symbol=symbol, outputsize='full')
+    if(period=='10days'):
+        slice=data.tail(10)
+    if(period=='1year'):
+        slice=data.tail(365)
+    high=slice['2. high']
+    sorted=high.sort_values()
+    a=sorted.tolist()
+    return a[-1]
+
+""" return the data within last 10 days(default)/1 year that has the lowest 'low' value
+"""
+def get_low_value(symbol, period='10days'):
+    ts = TimeSeries(key='0345Y49CIQ03XJK3', output_format='pandas')
+    data, meta_data = ts.get_daily(symbol=symbol, outputsize='full')
+    if(period=='10days'):
+        slice=data.tail(10)
+    if(period=='1year'):
+        slice=data.tail(365)
+    low=slice['3. low']
+    sorted=low.sort_values()
+    a=sorted.tolist()
+    return a[0]
