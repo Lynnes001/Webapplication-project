@@ -35,9 +35,9 @@ svr_rbf = SVR(kernel='rbf', C=1e3, gamma=0.1)
 svr_rbf.fit(format,stockPrice)
 svr_rbf_predict=svr_rbf.predict(predict)
 
-print("Predict result is :")
-print(stockSymbol," price on next market day will be: ",svr_rbf_predict[50])
-
+# print("Predict result is :")
+# print(stockSymbol," price on next market day will be: ",svr_rbf_predict[50])
+print(svr_rbf_predict[50])
 
 
 #--------------------draw---------------------
